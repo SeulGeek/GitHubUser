@@ -18,8 +18,8 @@ private const val PAGE_SIZE = 10
 
 class MainActivity : AppCompatActivity() {
 
-    val userList : ArrayList<GitHubUserInfo> = ArrayList()
     val TAG = javaClass.canonicalName
+    val userList : ArrayList<GitHubUserInfo> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

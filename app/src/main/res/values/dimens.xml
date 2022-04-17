@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="base_margin_3dp">3dp</dimen>
+    <dimen name="base_margin_8dp">8dp</dimen>
     <dimen name="base_margin_16dp">16dp</dimen>
     <dimen name="base_margin_24dp">24dp</dimen>
+
+    <dimen name="base_text_12sp">12sp</dimen>
+    <dimen name="base_text_14sp">14sp</dimen>
     <dimen name="base_text_16sp">16sp</dimen>
-    <dimen name="round_profile_image_width">40dp</dimen>
-    <dimen name="round_profile_image_height">40dp</dimen>
+    <dimen name="base_text_18sp">18sp</dimen>
+    <dimen name="base_text_24sp">24sp</dimen>
+
+    <dimen name="small_round_profile_image_width">40dp</dimen>
+    <dimen name="small_round_profile_image_height">40dp</dimen>
+    <dimen name="big_round_profile_image_width">100dp</dimen>
+    <dimen name="big_round_profile_image_height">100dp</dimen>
 </resources>

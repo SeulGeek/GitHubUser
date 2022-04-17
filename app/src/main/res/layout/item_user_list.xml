@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/layout_user_item"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -12,8 +13,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_user_profile"
-            android:layout_width="@dimen/round_profile_image_width"
-            android:layout_height="@dimen/round_profile_image_height"
+            android:layout_width="@dimen/small_round_profile_image_width"
+            android:layout_height="@dimen/small_round_profile_image_height"
             android:layout_marginTop="@dimen/base_margin_16dp"
             android:layout_marginEnd="@dimen/base_margin_16dp"
             android:layout_marginBottom="@dimen/base_margin_16dp"
