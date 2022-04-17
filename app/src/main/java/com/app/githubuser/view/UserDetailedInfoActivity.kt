@@ -1,8 +1,9 @@
 package com.app.githubuser.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.githubuser.R
 import com.app.githubuser.adapter.GitHubUserRepositoryAdapter
@@ -23,6 +24,8 @@ class UserDetailedInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_detailed_info)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         rv_github_user_repository_list.layoutManager = LinearLayoutManager(this)
 
@@ -64,4 +67,13 @@ class UserDetailedInfoActivity : AppCompatActivity() {
         })
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

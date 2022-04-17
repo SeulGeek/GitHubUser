@@ -14,12 +14,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-private const val PAGE_SIZE = 10
+private const val PAGE_SIZE = 30
 
 class MainActivity : AppCompatActivity() {
 
     val TAG = javaClass.canonicalName
     val userList : ArrayList<GitHubUserInfo> = ArrayList()
+    var pageCount = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,16 +28,24 @@ class MainActivity : AppCompatActivity() {
 
         rv_github_user_list.layoutManager = LinearLayoutManager(this)
         setUserList()
+
+        btn_add_user.setOnClickListener{
+            if (pageCount >= 1) {
+                pageCount++
+            }
+            setUserList()
+        }
     }
 
     private fun setUserList() {
-        GitHubNetworkService.getApi().getUserList(1, PAGE_SIZE).enqueue(object : Callback<GitHubUserList> {
+        GitHubNetworkService.getApi().getUserList(pageCount, PAGE_SIZE).enqueue(object : Callback<GitHubUserList> {
             override fun onResponse(call: Call<GitHubUserList>, response: Response<GitHubUserList>) {
                 if (response.isSuccessful && response.body() != null) {
                     for (i in 0 until PAGE_SIZE) {
                         userList.add(response.body()!!.items[i])
                     }
-                    rv_github_user_list.adapter = GitHubUserAdapter(userList,applicationContext)
+                    rv_github_user_list.adapter = GitHubUserAdapter(userList, applicationContext)
+                    rv_github_user_list.adapter?.notifyDataSetChanged()
                 }
             }
 
